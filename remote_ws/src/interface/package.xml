@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<package format="3">
+  <!-- Package metadata remains similar to ROS1 -->
+  <name>racecar_interface</name>
+  <version>0.1.0</version>
+  <description>The interface package for Princeton Race Car</description>
+
+  <maintainer email="zixuz@princeton.edu">Zixu Zhang</maintainer>
+  <license>BSD</license>
+  <author>Zixu Zhang</author>
+
+  <!--
+    Changed build tool dependency:
+    - ROS1 used catkin; ROS2 uses ament_cmake.
+  -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!--
+    Updated dependencies for ROS2:
+    - Replaced 'rospy' with 'rclpy' for ROS2 Python nodes.
+    - Retained std_msgs, racecar_msgs, and tf2 as these are needed at runtime.
+  -->
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>racecar_msgs</depend>
+  <depend>tf2</depend>
+
+  <!--
+    Interface Generation changes:
+    - Removed dynamic_reconfigure, which is ROS1-specific.
+    - Removed message_generation and message_runtime.
+    - Added rosidl_default_generators (build dependency) and rosidl_default_runtime (exec dependency)
+      for generating and using service/message interfaces in ROS2.
+  -->
+  <build_depend>rosidl_default_generators</build_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
+
+  <!--
+    Export section:
+    - Updated build_type to ament_cmake to reflect ROS2's build system.
+  -->
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

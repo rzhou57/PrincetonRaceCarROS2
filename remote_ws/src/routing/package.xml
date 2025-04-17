@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>racecar_routing</name>
+  <version>0.1.0</version>
+  <description>ROS2-based routing system using Lanelet2 for autonomous racecar navigation.</description>
+
+  <maintainer email="zixuz@princeton.edu">Zixu Zhang</maintainer>
+  <author>Zixu Zhang</author>
+  <license>BSD</license>
+
+  <!-- Build system -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <!-- Core ROS 2 dependencies -->
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>visualization_msgs</depend>
+  <depend>tf2</depend>
+
+  <!-- Lanelet2 (must be available in the ROS 2 environment) -->
+  <depend>lanelet2</depend>
+
+  <!-- Message filters for synchronized subscription -->
+  <depend>message_filters</depend>
+
+  <!-- Optional: if using rosidl for custom message generation -->
+  <build_depend>rosidl_default_generators</build_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
+
+  <!-- Launch file parsing (optional, useful for launch testing) -->
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+
+  <!-- Python dependency declaration (if you were using ament_python) -->
+  <!-- <exec_depend>python3</exec_depend> -->
+
+  <export>
+    <!-- Nothing to export for now -->
+  </export>
+</package>

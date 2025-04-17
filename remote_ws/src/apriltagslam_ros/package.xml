@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>tagslam_ros</name>
+  <version>5.0.0</version>
+  <description>
+    This package contains an implementation of realtime SLAM with Apriltag 
+    front-end in ROS. The front-end runs on either CPU or CUDA GPUs including 
+    Jetson devices.
+  </description>
+  
+  <maintainer email="jwille@princeton.edu">Jarod Wille</maintainer>
+  <maintainer email="danylo.malyuta@gmail.com">Danylo Malyuta</maintainer>
+  <maintainer email="w.merkt+oss@gmail.com">Wolfgang Merkt</maintainer>
+
+  <author>Zixu Zhang</author>
+  <author>Jarod Wille</author>
+
+  <license>Apache 2.0</license>
+
+  
+  
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
+  <!-- required: declaration that this package provides message-->
+  <member_of_group>rosidl_interface_packages</member_of_group>
+  <!-- <depend>rosidl_cmake</depend> -->
+
+  <!-- <depend>apriltag</depend> -->
+  <!-- <depend>gtsam</depend> -->
+
+  <depend>cv_bridge</depend>
+  <!-- boost and eigen needed for gtsam -->
+  <depend>boost</depend> 
+  <depend>eigen</depend>
+  <depend>geometry_msgs</depend>
+  <depend>image_geometry</depend>
+  <depend>image_transport</depend>
+  <depend>libopencv-dev</depend>
+  <depend>message_package</depend>
+  <depend>nav_msgs</depend>
+  <depend>pluginlib</depend>
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+
+  <build_depend>cmake_modules</build_depend>
+
+  <!-- TODO: add linting in future
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend> -->
+  
+  <export>
+    <build_type>ament_cmake</build_type> 
+  </export>
+</package>
